@@ -55,8 +55,10 @@ h1 em, h2 em, h3 em { color: #dea678; font-weight: 400; }
 .location-label { color: #a27e50; font-size: 9px; letter-spacing: .17em; margin: 0 0 7px; text-transform: uppercase; }
 .location-card h3 { font: 600 30px/.9 var(--display); margin: 0 0 9px; }
 .location-copy { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 0; max-width: 340px; }
-.location-link { color: #8b6842; font-size: 10px; letter-spacing: .08em; line-height: 1.5; text-align: right; text-decoration: none; text-transform: uppercase; }
-.location-link span { color: #b47e4d; font-size: 17px; margin-left: 5px; }
+.location-link { align-items: center; background: #2c4a3c; color: #fffdf9; display: flex; font-size: 10px; gap: 9px; justify-content: center; letter-spacing: .1em; line-height: 1.4; min-height: 48px; padding: 0 18px; text-align: center; text-decoration: none; text-transform: uppercase; transition: background .25s, transform .25s; white-space: nowrap; }
+.location-link:hover { background: #3b624e; transform: translateY(-2px); }
+.location-link .map-pin { color: #e8bd83; font-size: 21px; margin: 0; }
+.location-link .map-arrow { color: #e8bd83; font-size: 17px; margin: 0 0 0 2px; }
 .celebration { padding-bottom: 40px; }
 .gallery { padding-top: 40px; }
 .button { align-items: center; border: 1px solid transparent; display: inline-flex; gap: 26px; justify-content: space-between; padding: 16px 21px; font-size: 10px; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; transition: transform .3s, background .3s; }
@@ -165,7 +167,7 @@ h2 { font: 500 clamp(49px, 6vw, 78px)/.86 var(--display); letter-spacing: -.045e
   .celebration-head, .gallery-head { align-items: flex-start; flex-direction: column; gap: 25px; margin-top: 52px; }
   .event-card.featured, .event-card.featured:hover { transform: none; }
   .location-card { align-items: start; grid-template-columns: auto 1fr; margin-top: 45px; padding: 22px; }
-  .location-link { grid-column: 2; text-align: left; }
+  .location-link { grid-column: 1 / -1; text-align: center; width: 100%; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 180px 180px; }
   .tile-large { grid-row: span 1; grid-column: span 2; }
   .tile-sunset { grid-column: span 1; }
@@ -195,7 +197,7 @@ h2 { font: 500 clamp(49px, 6vw, 78px)/.86 var(--display); letter-spacing: -.045e
   .celebration-head, .gallery-head { align-items: flex-start; flex-direction: column; gap: 25px; margin-top: 52px; }
   .event-card.featured, .event-card.featured:hover { transform: none; }
   .location-card { align-items: start; grid-template-columns: auto 1fr; margin-top: 45px; padding: 22px; }
-  .location-link { grid-column: 2; text-align: left; }
+  .location-link { grid-column: 1 / -1; text-align: center; width: 100%; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 180px 180px; }
   .tile-large { grid-row: span 1; grid-column: span 2; }
   .tile-sunset { grid-column: span 1; }
