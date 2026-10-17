@@ -1,6 +1,12 @@
 const lightbox = document.querySelector("#lightbox");
+const invitationEntry = document.querySelector("#invitation-entry");
+const invitationSite = document.querySelector("#invitation-site");
+const openInvitation = document.querySelector("#open-invitation");
+const weddingSong = document.querySelector("#wedding-song");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
+const galleryGrid = document.querySelector(".gallery-grid");
+const galleryProgressBar = document.querySelector(".gallery-progress-bar");
 
 document.querySelectorAll(".gallery-tile").forEach((tile) => {
   tile.addEventListener("click", () => {
@@ -10,6 +16,22 @@ document.querySelectorAll(".gallery-tile").forEach((tile) => {
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
   });
+
+  const updateGalleryMotion = () => {
+    if (!galleryGrid || !galleryProgressBar) return;
+    const maxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
+    const progress = maxScroll > 0 ? galleryGrid.scrollLeft / maxScroll : 0;
+    galleryProgressBar.style.transform = `scaleX(${Math.max(progress, 0.08)})`;
+    galleryGrid.querySelectorAll(".gallery-tile").forEach((tile) => {
+      const distance = Math.abs(tile.offsetLeft + tile.offsetWidth / 2 - galleryGrid.scrollLeft - galleryGrid.clientWidth / 2);
+      const focus = Math.max(0, 1 - distance / galleryGrid.clientWidth);
+      tile.style.setProperty("--gallery-focus", focus.toFixed(2));
+    });
+  };
+
+  galleryGrid?.addEventListener("scroll", updateGalleryMotion, { passive: true });
+  window.addEventListener("resize", updateGalleryMotion);
+  updateGalleryMotion();
 });
 
 const closeLightbox = () => {
@@ -26,12 +48,18 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeLightbox();
 });
 
-document.querySelector("#rsvp-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = new FormData(event.currentTarget).get("name");
-  const message = document.querySelector("#form-message");
-  message.textContent = `Thank you, ${name}. We saved your RSVP with a little extra joy.`;
-  event.currentTarget.reset();
+openInvitation.addEventListener("click", () => {
+  openInvitation.disabled = true;
+  openInvitation.innerHTML = "Opening invitation <span>✦</span>";
+  weddingSong.currentTime = 0;
+  weddingSong.volume = 0.8;
+  weddingSong.play().catch((error) => {
+    console.error("The wedding song could not start.", error);
+  });
+  invitationEntry.classList.add("closing");
+  invitationSite.classList.add("visible");
+  document.body.classList.add("invitation-open");
+  window.setTimeout(() => invitationEntry.remove(), 850);
 });
 
 document.addEventListener("pointermove", (event) => {
