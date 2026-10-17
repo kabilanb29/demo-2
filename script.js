@@ -7,7 +7,6 @@ const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
 const galleryGrid = document.querySelector(".gallery-grid");
 const galleryProgressBar = document.querySelector(".gallery-progress-bar");
-const gallerySection = document.querySelector(".gallery");
 
 document.querySelectorAll(".gallery-tile").forEach((tile) => {
   tile.addEventListener("click", () => {
@@ -23,22 +22,16 @@ document.querySelectorAll(".gallery-tile").forEach((tile) => {
     const maxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
     const progress = maxScroll > 0 ? galleryGrid.scrollLeft / maxScroll : 0;
     galleryProgressBar.style.transform = `scaleX(${Math.max(progress, 0.08)})`;
-  };
-
-  const updateGalleryOrbit = () => {
-    if (!gallerySection || !galleryGrid) return;
-    const bounds = gallerySection.getBoundingClientRect();
-    const travel = Math.max(gallerySection.offsetHeight - window.innerHeight, 1);
-    const progress = Math.min(1, Math.max(0, -bounds.top / travel));
-    galleryGrid.style.setProperty("--orbit-rotation", `${progress * -270}deg`);
-    galleryProgressBar.style.transform = `scaleX(${Math.max(progress, 0.08)})`;
+    galleryGrid.querySelectorAll(".gallery-tile").forEach((tile) => {
+      const distance = Math.abs(tile.offsetLeft + tile.offsetWidth / 2 - galleryGrid.scrollLeft - galleryGrid.clientWidth / 2);
+      const focus = Math.max(0, 1 - distance / galleryGrid.clientWidth);
+      tile.style.setProperty("--gallery-focus", focus.toFixed(2));
+    });
   };
 
   galleryGrid?.addEventListener("scroll", updateGalleryMotion, { passive: true });
-  window.addEventListener("scroll", updateGalleryOrbit, { passive: true });
-  window.addEventListener("resize", updateGalleryOrbit);
+  window.addEventListener("resize", updateGalleryMotion);
   updateGalleryMotion();
-  updateGalleryOrbit();
 });
 
 const closeLightbox = () => {
