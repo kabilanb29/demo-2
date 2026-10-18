@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The wedding celebration of Srinivas and Jayasheeli at Gurubala Thirumana Mandapam, Vickramasingapuram, Papanasam." />
-    <title>Srinivas & Jayasheeli | Papanasam</title>
+    <meta name="description" content="The wedding celebration of Srini and Jaya at Gurubala Thirumana Mandapam, Vickramasingapuram, Papanasam." />
+    <title>Srini & Jaya | Papanasam</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,9 +18,9 @@
         <p class="entry-title">Wedding Invitation</p>
         <p class="eyebrow">A little invitation from Papanasam</p>
         <h2 class="entry-names">
-          <span class="entry-name">Srinivas</span>
+          <span class="entry-name entry-srini">Srini</span>
           <span class="entry-weds">weds</span>
-          <span class="entry-name">Jayasheeli</span>
+          <span class="entry-name entry-jaya">Jaya</span>
         </h2>
         <button class="open-invitation" id="open-invitation" type="button">
           Open invitation <span>↗</span>
@@ -47,7 +47,7 @@
       <div class="hero-shade"></div>
       <div class="hero-content container">
         <p class="eyebrow hero-eyebrow"><span></span> Papanasam · Tirunelveli <span></span></p>
-        <h1>Srinivas<br /><em>& Jayasheeli</em></h1>
+        <h1><span class="hero-srini">Srini</span><br /><em class="hero-jaya">&amp; Jaya</em></h1>
         <p class="hero-copy">With the blessings of our families, we invite you to celebrate our wedding in the heart of Papanasam.</p>
         <div class="hero-actions">
           <a class="button button-light" href="#celebration">See the wedding details <span>↓</span></a>
@@ -84,13 +84,13 @@
           <p>Join us for our wedding celebration at Gurubala Thirumana Mandapam, Vickramasingapuram.</p>
         </div>
         <div class="location-card">
-          <div class="location-icon">⌖</div>
+          <div class="location-icon" aria-hidden="true">📍</div>
           <div>
             <p class="location-label">The wedding venue · Papanasam</p>
             <h3>Gurubala Thirumana Mandapam</h3>
             <p class="location-copy">Vickramasingapuram, Papanasam · 627425</p>
           </div>
-          <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Gurubala+Thirumana+Mandapam%2C+Vickramasingapuram%2C+Papanasam%2C+Tamil+Nadu+627425" target="_blank" rel="noreferrer"><span class="map-pin">⌖</span> Get directions in Google Maps <span class="map-arrow">↗</span></a>
+          <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Gurubala+Thirumana+Mandapam%2C+Vickramasingapuram%2C+Papanasam%2C+Tamil+Nadu+627425" target="_blank" rel="noreferrer"><span class="map-pin" aria-hidden="true">📍</span> Get directions in Google Maps <span class="map-arrow">↗</span></a>
         </div>
       </section>
 
@@ -101,6 +101,10 @@
           <p>Tap a photograph to see the places that hold our hearts.</p>
         </div>
         <div class="gallery-grid">
+          <button class="gallery-tile tile-large" data-image="assets/tea-garden-panorama.jpg" data-caption="The green hills of Manjolai">
+            <img src="assets/tea-garden-panorama.jpg" alt="Green tea gardens across rolling hills" />
+            <span>The green hills of Manjolai ↗</span>
+          </button>
           <button class="gallery-tile tile-large" data-image="assets/manjolai-hills.webp" data-caption="The road to Manjolai">
             <img src="assets/manjolai-hills.webp" alt="Green tea gardens and a winding road" />
             <span>The road to Manjolai ↗</span>
