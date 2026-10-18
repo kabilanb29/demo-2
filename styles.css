@@ -98,15 +98,15 @@ h1 em, h2 em, h3 em { color: #dea678; font-weight: 400; }
 .location-link:hover { background: #3b624e; transform: translateY(-2px); }
 .location-link .map-pin { color: #e8bd83; font-size: 21px; margin: 0; }
 .location-link .map-arrow { color: #e8bd83; font-size: 17px; margin: 0 0 0 2px; }
-.celebration { background: linear-gradient(180deg, rgba(235, 243, 237, .58), rgba(220, 234, 222, .78)), url("assets/manjolai-hills.webp") center 42% / cover; border-radius: 28px; color: var(--ink); overflow: hidden; padding-bottom: 0; position: relative; }
-.celebration::before { background: linear-gradient(180deg, rgba(244, 249, 243, .42) 0%, rgba(235, 244, 235, .28) 48%, rgba(221, 235, 223, .62) 100%); content: ""; inset: 0; pointer-events: none; position: absolute; }
+.celebration { background: linear-gradient(180deg, rgba(13, 42, 34, .72), rgba(8, 25, 30, .9)), url("assets/manjolai-hills.webp") center 42% / cover; border-radius: 28px; color: #fffaf0; overflow: hidden; padding-bottom: 0; position: relative; }
+.celebration::before { background: linear-gradient(180deg, rgba(8, 28, 24, .1), rgba(8, 28, 24, .28)); content: ""; inset: 0; pointer-events: none; position: absolute; }
 .celebration > * { position: relative; z-index: 1; }
-.celebration .section-kicker { color: #8e7049; }
-.celebration .section-kicker span:first-child { color: #aa8050; }
-.celebration .section-kicker i { background: rgba(170, 128, 80, .72); }
-.celebration-head p { color: #5d6e62; }
-.celebration h2 { color: #1c2922; }
-.celebration h2 em { color: #bd7654; }
+.celebration .section-kicker { color: #f0c68b; }
+.celebration .section-kicker span:first-child { color: #f6d8a7; }
+.celebration .section-kicker i { background: rgba(246, 216, 167, .7); }
+.celebration-head p { color: #d8cdb9; }
+.celebration h2 { color: #fffaf0; }
+.celebration h2 em { color: #f2bd72; }
 .celebration .location-label { color: #92764e; }
 .celebration .location-card h3 { color: var(--ink); }
 .celebration .location-copy { color: var(--muted); }
@@ -142,6 +142,7 @@ h2 { font: 500 clamp(49px, 6vw, 78px)/.86 var(--display); letter-spacing: -.045e
 .landscape-quote span { color: rgba(255,255,255,.65); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
 .celebration-head { display: flex; justify-content: space-between; align-items: end; margin: 70px 0 36px; }
 .celebration-head p, .gallery-head p { color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 245px; margin-bottom: 4px; }
+.celebration-head p { color: #d8cdb9; }
 .celebration-head h2, .celebration-head p { min-width: 0; text-align: left; }
 .celebration-head h2 { max-width: 100%; overflow-wrap: normal; }
 .event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
@@ -294,3 +295,8 @@ h2 { font: 500 clamp(49px, 6vw, 78px)/.86 var(--display); letter-spacing: -.045e
 /* Keep the mobile-only flow compact between the location and gallery. */
 .celebration { padding-bottom: 0; }
 .gallery { padding-top: 40px; }
+
+/* Full-bleed mobile cards with their content inset preserved. */
+.celebration,
+.gallery { border-radius: 0; margin-left: 0; margin-right: 0; width: 100%; }
+.celebration .location-card { margin-left: 12px; margin-right: 12px; }
