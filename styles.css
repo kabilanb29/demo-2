@@ -18,20 +18,20 @@ body:not(.invitation-open) { overflow: hidden; }
 .invitation-site.visible { opacity: 1; pointer-events: auto; transform: scale(1); }
 .invitation-entry { align-items: center; background: #18382c; color: var(--white); display: flex; flex-direction: column; inset: 0; justify-content: center; overflow: hidden; padding: 24px 22px; position: fixed; text-align: center; z-index: 50; }
 .entry-nature, .entry-shade { inset: 0; position: absolute; }
-.entry-nature { background: url("assets/manjolai-hills.webp") center / cover; filter: saturate(.75); transform: scale(1.08); animation: natureDrift 14s ease-in-out infinite alternate; }
-.entry-shade { background: linear-gradient(180deg, rgba(13, 42, 31, .32), rgba(10, 29, 22, .92) 88%); }
+.entry-nature { background: url("assets/vanatheertham-temple.jpg") center 34% / cover; filter: saturate(.82) contrast(1.04); transform: scale(1.08); animation: natureDrift 14s ease-in-out infinite alternate; }
+.entry-shade { background: linear-gradient(180deg, rgba(8, 24, 53, .3), rgba(8, 20, 38, .9) 88%); }
 .entry-copy { max-width: 100%; position: relative; }
-.entry-copy .eyebrow { color: #f1cc98; font-size: 9px; letter-spacing: .18em; margin: 0 0 27px; text-transform: uppercase; }
-.entry-title { color: rgba(255,255,255,.98); font-family: var(--sans); font-size: clamp(17px, 5vw, 24px); font-weight: 700; letter-spacing: .16em; margin: 0 0 25px; text-transform: uppercase; }
+.entry-copy .eyebrow { color: #f5d49d; font-size: 9px; letter-spacing: .18em; margin: 0 0 27px; text-transform: uppercase; }
+.entry-title { color: #fffaf0; font-family: var(--sans); font-size: clamp(17px, 5vw, 24px); font-weight: 700; letter-spacing: .16em; margin: 0 0 25px; text-shadow: 0 2px 12px rgba(0,0,0,.25); text-transform: uppercase; }
 .entry-copy h2 { color: var(--white); font-family: var(--serif); font-weight: 500; margin: 0; }
 .entry-names { align-items: center; display: flex; flex-direction: column; line-height: .85; }
 .entry-name { font-size: clamp(42px, 12vw, 68px); letter-spacing: -.03em; }
-.entry-weds { color: #e4ae72; font-family: var(--serif); font-size: clamp(17px, 5vw, 25px); font-style: italic; letter-spacing: .12em; line-height: 1; margin: 15px 0 22px; position: relative; }
+.entry-weds { color: #f2bd72; font-family: var(--serif); font-size: clamp(17px, 5vw, 25px); font-style: italic; letter-spacing: .12em; line-height: 1; margin: 15px 0 22px; position: relative; text-shadow: 0 2px 10px rgba(0,0,0,.3); }
 .entry-weds::before, .entry-weds::after { background: rgba(239, 202, 153, .65); content: ""; height: 1px; position: absolute; top: 50%; width: 28px; }
 .entry-weds::before { right: calc(100% + 12px); }
 .entry-weds::after { left: calc(100% + 12px); }
 .entry-copy > p:not(.eyebrow) { color: rgba(255,255,255,.78); font-size: 10px; letter-spacing: .12em; margin: 12px 0 18px; text-transform: uppercase; }
-.open-invitation { background: #f9ead4; border: 0; color: #233a2e; cursor: pointer; font-size: 10px; letter-spacing: .15em; margin-top: 18px; min-height: 50px; padding: 0 22px; text-transform: uppercase; transition: transform .3s, background .3s; }
+.open-invitation { background: #fff4dc; border: 0; box-shadow: 0 8px 24px rgba(0,0,0,.2); color: #173653; cursor: pointer; font-size: 10px; letter-spacing: .15em; margin-top: 18px; min-height: 50px; padding: 0 22px; text-transform: uppercase; transition: transform .3s, background .3s; }
 .open-invitation:hover { background: #fff; transform: translateY(-3px); }
 .open-invitation:disabled { cursor: wait; opacity: .8; }
 .open-invitation span { color: #a86e42; font-size: 17px; margin-left: 14px; }
@@ -52,8 +52,8 @@ button { cursor: pointer; }
 .container { width: min(1180px, calc(100% - 96px)); margin: auto; }
 .hero { min-height: 100vh; position: relative; color: var(--white); overflow: hidden; background: #203d33; }
 .hero-image, .hero-shade, .landscape-image, .landscape-overlay, .rsvp-bg, .rsvp-overlay { position: absolute; inset: 0; }
-.hero-image { background: url("assets/manjolai-hills.webp") center 55% / cover; animation: heroZoom 16s ease-out both; }
-.hero-shade { background: linear-gradient(90deg, rgba(14, 28, 22, .84), rgba(14, 28, 22, .18) 76%), linear-gradient(0deg, rgba(10, 24, 19, .46), transparent 48%); }
+.hero-image { background: url("assets/vanatheertham-temple.jpg") center 34% / cover; animation: heroZoom 16s ease-out both; }
+.hero-shade { background: linear-gradient(90deg, rgba(8, 23, 44, .86), rgba(8, 23, 44, .2) 76%), linear-gradient(0deg, rgba(7, 20, 38, .58), transparent 48%); }
 .nav { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding-top: 30px; }
 .brand { color: inherit; font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
 .brand span { color: #dc9a79; font-size: 18px; margin: 0 3px; }
